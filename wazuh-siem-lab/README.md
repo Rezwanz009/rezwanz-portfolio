@@ -36,15 +36,16 @@ The screenshot below confirms that the remote Ubuntu endpoint successfully regis
 <img width="1912" height="870" alt="Screenshot 2026-05-13 164658" src="https://github.com/user-attachments/assets/a61d492d-521f-4fd5-9368-04375056b192" />
 
 ### ⚙️ Engineering Phase: Activating Global Archive Logging
-This snapshot displays the core server configuration file (`ossec.conf`) demonstrating the transition from standard high-threshold alerting to full data retention:
+To transition the SIEM platform from standard threshold-based alerting to absolute data retention, the central manager's core initialization script (`/var/ossec/etc/ossec.conf`) was modified using terminal-based text editors. 
 
-[DRAG_AND_DROP_TERMINAL_CONFIG_HERE]
+By altering the global configuration block, the system was engineered to archive all incoming events into JSON formats for deep forensic analysis:
 
-### 🚨 Threat Ingestion Phase: Real-Time SSH Telemetry Ingestion
-This artifact captures the live Wazuh Dashboard processing authentication logs generated during the simulated brute-force events:
-
-[DRAG_AND_DROP_ALERTS_HERE]
----
-
-## 📊 Project Artifacts & Results
-*(Pro-tip: Once your repo is created, you can drag and drop your screenshots right here into the editor to show off your active Wazuh Agent dashboard donut chart!)*
+```xml
+<ossec_config>
+  <global>
+    <jsonout_output>yes</jsonout_output>
+    <alerts_log>yes</alerts_log>
+    <logall>yes</logall>
+    <logall_json>yes</logall_json>
+  </global>
+</ossec_config>
