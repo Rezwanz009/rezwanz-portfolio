@@ -33,7 +33,7 @@ This project demonstrates the deployment of a centralized **Wazuh SIEM Manager**
 ### 🟢 Ingestion Phase: Successful Agent Connection
 The screenshot below confirms that the remote Ubuntu endpoint successfully registered and established an active handshake with the central cloud-based Wazuh Manager:
 
-<img width="1917" height="817" alt="Screenshot 2026-05-13 164551" src="https://github.com/user-attachments/assets/f36bc622-01a5-4bb1-91d1-0082b1a1f929" />
+<img width="1912" height="870" alt="Screenshot 2026-05-13 164658" src="https://github.com/user-attachments/assets/a61d492d-521f-4fd5-9368-04375056b192" />
 
 ### ⚙️ Engineering Phase: Activating Global Archive Logging
 This snapshot displays the core server configuration file (`ossec.conf`) demonstrating the transition from standard high-threshold alerting to full data retention:
